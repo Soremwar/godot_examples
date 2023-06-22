@@ -10,6 +10,5 @@ func _ready():
 func _process(_delta):
 	pass
 
-
 func set_score(score: int):
 	$Score.text = "Score: %d" % score

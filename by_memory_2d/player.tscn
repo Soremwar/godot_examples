@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpihhhmlit8x8"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7ohtc"]
-[ext_resource type="Texture2D" uid="uid://dgmr4ait7onua" path="res://art/playerGrey_up1.png" id="1_q5ag5"]
-[ext_resource type="Texture2D" uid="uid://cryksmtokwp76" path="res://art/playerGrey_up2.png" id="2_yurx4"]
-[ext_resource type="Texture2D" uid="uid://bao87wmwtd8mq" path="res://art/playerGrey_walk1.png" id="3_v26qy"]
-[ext_resource type="Texture2D" uid="uid://bfd5lptvxq761" path="res://art/playerGrey_walk2.png" id="4_lu6bp"]
+[ext_resource type="Texture2D" uid="uid://dgmr4ait7onua" path="res://assets/art/playerGrey_up1.png" id="1_q5ag5"]
+[ext_resource type="Texture2D" uid="uid://cryksmtokwp76" path="res://assets/art/playerGrey_up2.png" id="2_yurx4"]
+[ext_resource type="Texture2D" uid="uid://bao87wmwtd8mq" path="res://assets/art/playerGrey_walk1.png" id="3_v26qy"]
+[ext_resource type="Texture2D" uid="uid://bfd5lptvxq761" path="res://assets/art/playerGrey_walk2.png" id="4_lu6bp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p1uxv"]
 radius = 27.0

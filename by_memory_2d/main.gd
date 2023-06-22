@@ -2,41 +2,67 @@ extends Node2D
 
 var MIN_MOB_SPEED = 150.0
 var MAX_MOB_SPEED = 250.0
+var TITLE = "Dodge the creeps!"
 
 @export var mob_scene: PackedScene
 
 var score: int
 
 
-func update_UI():
+func update_HUD():
 	$UI.set_score(score)
 
 
 func start_game():
 	score = 0
-	$Player.start($PlayerInitialPosition.position)
-	update_UI()
 
+	get_tree().call_group("mobs", "queue_free")
+	$UI/Message.text = "Get ready!"
+	$UI/StartButton.hide()
+	$Player.start($PlayerInitialPosition.position)
+	$Music.play()
+
+	# Reflect score reset
+	update_HUD()
+
+	await get_tree().create_timer(2.0).timeout
+
+	$UI/Message.hide()
 	$MobTimer.start()
 	$ScoreTimer.start()
 
 
 func game_over():
+	$Music.stop()
+	$DeathSound.play()
+
 	$MobTimer.stop()
 	$ScoreTimer.stop()
 
+	$UI/Message.text = "Game over"
+	$UI/Message.show()
 
-# Called when the node enters the scene tree for the first time.
+	await get_tree().create_timer(2.0).timeout
+
+	$DeathSound.stop()	
+	$Player.start($PlayerInitialPosition.position)
+	$Player.show()
+	$UI/Message.text = TITLE
+	$UI/StartButton.show()
+
+
 func _ready():
-	start_game()
+	$Player.start($PlayerInitialPosition.position)
+	$UI/Message.text = TITLE
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	update_UI()
+	update_HUD()
 
 
 func _on_player_hit():
+	# Hide it, don't kill it
+	$Player.hide()
 	game_over()
 
 
@@ -61,3 +87,7 @@ func _on_mob_timer_timeout():
 
 func _on_score_timer_timeout():
 	score += 1
+
+
+func _on_button_pressed():
+	start_game()

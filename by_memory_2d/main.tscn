@@ -1,14 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://becc7q6vesnvk"]
+[gd_scene load_steps=9 format=3 uid="uid://becc7q6vesnvk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0ovi2"]
 [ext_resource type="PackedScene" uid="uid://cpihhhmlit8x8" path="res://player.tscn" id="1_h8gx7"]
 [ext_resource type="PackedScene" uid="uid://biaq88j656pcr" path="res://mob.tscn" id="2_tw6u8"]
 [ext_resource type="Script" path="res://UI.gd" id="3_jcvny"]
-[ext_resource type="FontFile" uid="uid://bqsbcr0o6g3yo" path="res://fonts/Xolonium-Regular.ttf" id="3_ufll7"]
-
-[sub_resource type="Theme" id="Theme_4uw1e"]
-default_font = ExtResource("3_ufll7")
-default_font_size = 40
+[ext_resource type="Theme" uid="uid://djcwpwrybdl2o" path="res://assets/themes/ui.tres" id="4_3e83s"]
+[ext_resource type="AudioStream" uid="uid://du13liqbm065j" path="res://assets/sound/House In a Forest Loop.ogg" id="6_u2d73"]
+[ext_resource type="AudioStream" uid="uid://dyfl5sifhi05j" path="res://assets/sound/gameover.wav" id="7_3s65c"]
 
 [sub_resource type="Curve2D" id="Curve2D_6xypl"]
 _data = {
@@ -38,8 +36,44 @@ offset_top = 34.0
 offset_right = 16.0
 offset_bottom = 57.0
 grow_horizontal = 2
-theme = SubResource("Theme_4uw1e")
+theme = ExtResource("4_3e83s")
 text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -107.0
+offset_right = 176.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_3e83s")
+text = "Azopotamadre
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -157.5
+offset_top = -130.0
+offset_right = 157.5
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_3e83s")
+text = "Start"
 
 [node name="Player" parent="." instance=ExtResource("1_h8gx7")]
 position = Vector2(0, 0)
@@ -57,6 +91,13 @@ curve = SubResource("Curve2D_6xypl")
 [node name="PlayerInitialPosition" type="Marker2D" parent="."]
 position = Vector2(240, 450)
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_u2d73")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_3s65c")
+
+[connection signal="pressed" from="UI/StartButton" to="." method="_on_button_pressed"]
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

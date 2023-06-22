@@ -45,4 +45,3 @@ func start(starting_position: Vector2):
 func _on_body_entered(body: Node2D):
 	if body.is_in_group("mobs"):
 		hit.emit()
-		queue_free()
