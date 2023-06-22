@@ -20,7 +20,7 @@ func start_game():
 	$UI/Message.text = "Get ready!"
 	$UI/StartButton.hide()
 	$Player.start($PlayerInitialPosition.position)
-	$Music.play()
+	$MusicPlayer.play_track($MusicPlayer.TrackList.MUSIC)
 
 	# Reflect score reset
 	update_HUD()
@@ -33,8 +33,7 @@ func start_game():
 
 
 func game_over():
-	$Music.stop()
-	$DeathSound.play()
+	$MusicPlayer.play_track($MusicPlayer.TrackList.DEATH_SOUND)
 
 	$MobTimer.stop()
 	$ScoreTimer.stop()
@@ -44,7 +43,6 @@ func game_over():
 
 	await get_tree().create_timer(2.0).timeout
 
-	$DeathSound.stop()	
 	$Player.start($PlayerInitialPosition.position)
 	$Player.show()
 	$UI/Message.text = TITLE

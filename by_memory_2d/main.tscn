@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://becc7q6vesnvk"]
+[gd_scene load_steps=10 format=3 uid="uid://becc7q6vesnvk"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0ovi2"]
 [ext_resource type="PackedScene" uid="uid://cpihhhmlit8x8" path="res://player.tscn" id="1_h8gx7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://djcwpwrybdl2o" path="res://assets/themes/ui.tres" id="4_3e83s"]
 [ext_resource type="AudioStream" uid="uid://du13liqbm065j" path="res://assets/sound/House In a Forest Loop.ogg" id="6_u2d73"]
 [ext_resource type="AudioStream" uid="uid://dyfl5sifhi05j" path="res://assets/sound/gameover.wav" id="7_3s65c"]
+[ext_resource type="PackedScene" uid="uid://drqed2nbo6epa" path="res://music_player.tscn" id="8_7hq77"]
 
 [sub_resource type="Curve2D" id="Curve2D_6xypl"]
 _data = {
@@ -91,11 +92,9 @@ curve = SubResource("Curve2D_6xypl")
 [node name="PlayerInitialPosition" type="Marker2D" parent="."]
 position = Vector2(240, 450)
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_u2d73")
-
-[node name="DeathSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_3s65c")
+[node name="MusicPlayer" parent="." instance=ExtResource("8_7hq77")]
+death_sound = ExtResource("7_3s65c")
+music = ExtResource("6_u2d73")
 
 [connection signal="pressed" from="UI/StartButton" to="." method="_on_button_pressed"]
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
