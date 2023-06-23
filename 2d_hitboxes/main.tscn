@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhp4iiogem7ni"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_6y57f"]
+[ext_resource type="PackedScene" uid="uid://dp064813a31ec" path="res://character.tscn" id="2_rvqls"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_6y57f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.286275, 0.647059, 0.537255, 1)
+
+[node name="Player" parent="." groups=["friendly"] instance=ExtResource("2_rvqls")]
+position = Vector2(640, 320)
+player = true
+
+[node name="FriendlyMob" parent="." groups=["friendly"] instance=ExtResource("2_rvqls")]
+position = Vector2(340, 320)
+
+[node name="EnemyMob" parent="." groups=["mobs"] instance=ExtResource("2_rvqls")]
+position = Vector2(940, 320)
