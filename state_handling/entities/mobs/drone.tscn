@@ -1,0 +1,147 @@
+[gd_scene load_steps=22 format=3 uid="uid://boo5lwvvob72g"]
+
+[ext_resource type="Texture2D" uid="uid://d0spshuxbw24x" path="res://art/sprites/mobs/drone/death.png" id="1_8gx70"]
+[ext_resource type="Script" path="res://entities/mobs/drone.gd" id="1_wf034"]
+[ext_resource type="Texture2D" uid="uid://ivncsenafoe8" path="res://art/sprites/mobs/drone/hurt.png" id="2_krg5f"]
+[ext_resource type="Texture2D" uid="uid://tq7cvdlydb2n" path="res://art/sprites/mobs/drone/idle.png" id="3_4nw3t"]
+[ext_resource type="Texture2D" uid="uid://c2wnakglb2uup" path="res://art/sprites/mobs/drone/walk.png" id="4_aka7l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfin1"]
+size = Vector2(43, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33h7d"]
+atlas = ExtResource("1_8gx70")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvfxb"]
+atlas = ExtResource("1_8gx70")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge0uo"]
+atlas = ExtResource("1_8gx70")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46rup"]
+atlas = ExtResource("1_8gx70")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi14l"]
+atlas = ExtResource("2_krg5f")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxhdb"]
+atlas = ExtResource("2_krg5f")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls0j4"]
+atlas = ExtResource("3_4nw3t")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gq6p"]
+atlas = ExtResource("3_4nw3t")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px4fh"]
+atlas = ExtResource("3_4nw3t")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngjts"]
+atlas = ExtResource("3_4nw3t")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn4c1"]
+atlas = ExtResource("4_aka7l")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpbpy"]
+atlas = ExtResource("4_aka7l")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhi0x"]
+atlas = ExtResource("4_aka7l")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5irv"]
+atlas = ExtResource("4_aka7l")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fh7cv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33h7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvfxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge0uo")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_46rup")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi14l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxhdb")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls0j4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gq6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px4fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngjts")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn4c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpbpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhi0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5irv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Drone" type="CharacterBody2D"]
+position = Vector2(320, 176)
+script = ExtResource("1_wf034")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_rfin1")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, -27)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_fh7cv")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.646205

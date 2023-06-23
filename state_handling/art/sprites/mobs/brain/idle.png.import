@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpibphd1lh84v"
-path="res://.godot/imported/defend.png-6c00872ed76cde2a03307dff3e9821d7.ctex"
+uid="uid://c20nmkxvvdbin"
+path="res://.godot/imported/idle.png-306cfdedaa5861c1b8690f5b4e701e4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/mob_finite_state_machine/defend.png"
-dest_files=["res://.godot/imported/defend.png-6c00872ed76cde2a03307dff3e9821d7.ctex"]
+source_file="res://art/sprites/mobs/brain/idle.png"
+dest_files=["res://.godot/imported/idle.png-306cfdedaa5861c1b8690f5b4e701e4b.ctex"]
 
 [params]
 

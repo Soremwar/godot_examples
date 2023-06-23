@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dugduk1pbckgh"]
+
+[ext_resource type="Script" path="res://mob_global_state_diffusion.gd" id="1_jgumy"]
+
+[sub_resource type="Curve2D" id="Curve2D_qeaee"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400, 0, 0, 0, 0, 0, 400, 400, 0, 0, 0, 0, 0, 400, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="MobGlobalStateDiffusion" type="Node2D"]
+script = ExtResource("1_jgumy")
+
+[node name="Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_qeaee")
+
+[node name="SpawnLocation" type="PathFollow2D" parent="Path"]

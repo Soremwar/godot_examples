@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://47fredo0wv3u"]
+[gd_scene load_steps=5 format=3 uid="uid://47fredo0wv3u"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_j0umr"]
 [ext_resource type="PackedScene" uid="uid://4sa7lwfh8mxb" path="res://player.tscn" id="2_ito3y"]
 [ext_resource type="PackedScene" uid="uid://2xki0oj50vis" path="res://mob_finite_state_machine.tscn" id="3_5o634"]
+[ext_resource type="PackedScene" uid="uid://dugduk1pbckgh" path="res://mob_global_state_diffusion.tscn" id="4_mw02e"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_j0umr")
@@ -15,3 +16,7 @@ color = Color(0.658824, 0.788235, 0.541176, 1)
 [node name="Player" parent="." instance=ExtResource("2_ito3y")]
 
 [node name="MobFiniteStateMachine" parent="." instance=ExtResource("3_5o634")]
+
+[node name="MobGlobalStateDiffusion" parent="." instance=ExtResource("4_mw02e")]
+position = Vector2(836, 281)
+mob_number = 3

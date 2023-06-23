@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drfcyajnlxa0o"
-path="res://.godot/imported/attack.png-d7ead6b560d5bb9fe4c8c27136491397.ctex"
+uid="uid://ivncsenafoe8"
+path="res://.godot/imported/hurt.png-e3618e13090e22b34801d1fa4454ae2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/mob_finite_state_machine/attack.png"
-dest_files=["res://.godot/imported/attack.png-d7ead6b560d5bb9fe4c8c27136491397.ctex"]
+source_file="res://art/sprites/mobs/drone/hurt.png"
+dest_files=["res://.godot/imported/hurt.png-e3618e13090e22b34801d1fa4454ae2d.ctex"]
 
 [params]
 
