@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dp064813a31ec"]
+[gd_scene load_steps=34 format=3 uid="uid://dp064813a31ec"]
 
 [ext_resource type="Texture2D" uid="uid://dt585yedofowd" path="res://assets/entities/player/hurt.png" id="1_1ul88"]
 [ext_resource type="Script" path="res://character.gd" id="1_w1w1q"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://1cu2knp7q7x0" path="res://assets/entities/player/walk.png" id="5_c3vxb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5k2pk"]
-radius = 20.1042
+radius = 21.0
 height = 118.622
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n64wx"]
@@ -164,7 +164,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"melee",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -213,21 +213,34 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n3b7c"]
+radius = 14.0
+height = 56.0
+
 [node name="Character" type="CharacterBody2D" groups=["characters"]]
 position = Vector2(640, 360)
 script = ExtResource("1_w1w1q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 0)
 shape = SubResource("CapsuleShape2D_5k2pk")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-6.10352e-05, 0)
+position = Vector2(-1.00006, 0)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_etms2")
-animation = &"walk"
+animation = &"melee"
 autoplay = "idle"
-frame_progress = 0.270236
-flip_h = true
+frame_progress = 0.939677
+
+[node name="MeleeHitbox" type="Area2D" parent="Sprite"]
+position = Vector2(3.05176e-05, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/MeleeHitbox"]
+position = Vector2(44, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_n3b7c")
 
 [node name="ProjectileTimeout" type="Timer" parent="."]
 wait_time = 0.5

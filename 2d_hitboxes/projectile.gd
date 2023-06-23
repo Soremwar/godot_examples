@@ -23,6 +23,9 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_body_entered(body: Node2D):
+	if body == null:
+		return
+
 	if body.is_in_group("characters"):
 		body.hit.emit(groups)
 
