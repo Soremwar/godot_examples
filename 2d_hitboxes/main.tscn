@@ -20,3 +20,5 @@ position = Vector2(340, 320)
 
 [node name="EnemyMob" parent="." groups=["mobs"] instance=ExtResource("2_rvqls")]
 position = Vector2(940, 320)
+scale = Vector2(-1, 1)
+facing_direction = 0
