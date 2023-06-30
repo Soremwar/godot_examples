@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0064hqaoqchb"
-path="res://.godot/imported/idle.png-df241fce8b5cdb29fce45710d8585bd2.ctex"
+uid="uid://57oipvm72877"
+path="res://.godot/imported/hurt.png-4c98a6244961c603bc41e59b0f10c74d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/mob_finite_state_machine/idle.png"
-dest_files=["res://.godot/imported/idle.png-df241fce8b5cdb29fce45710d8585bd2.ctex"]
+source_file="res://art/sprites/mobs/brain/hurt.png"
+dest_files=["res://.godot/imported/hurt.png-4c98a6244961c603bc41e59b0f10c74d.ctex"]
 
 [params]
 

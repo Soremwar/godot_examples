@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf4dqpuuyeb4u"]
+
+[ext_resource type="Script" path="res://entities/player/projectile.gd" id="1_03ukw"]
+[ext_resource type="Texture2D" uid="uid://yfnl1lji43oh" path="res://art/sprites/effects/projectile.png" id="1_aqka2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kr1ye"]
+radius = 8.0
+height = 32.0
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_03ukw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kr1ye")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_aqka2")

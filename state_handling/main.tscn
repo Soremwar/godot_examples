@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://47fredo0wv3u"]
+[gd_scene load_steps=8 format=3 uid="uid://d2mcwbwrrjq8h"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_j0umr"]
-[ext_resource type="PackedScene" uid="uid://4sa7lwfh8mxb" path="res://player.tscn" id="2_ito3y"]
+[ext_resource type="PackedScene" uid="uid://brdl83ivlp8e8" path="res://entities/player/player.tscn" id="2_ito3y"]
 [ext_resource type="PackedScene" uid="uid://2xki0oj50vis" path="res://mob_finite_state_machine.tscn" id="3_5o634"]
+[ext_resource type="PackedScene" uid="uid://c11lne10c6fpu" path="res://entities/mobs/brain.tscn" id="4_2py3y"]
+[ext_resource type="PackedScene" uid="uid://boo5lwvvob72g" path="res://entities/mobs/drone.tscn" id="5_2wexj"]
+[ext_resource type="PackedScene" uid="uid://cfj1hrkf07dgh" path="res://entities/mobs/saw.tscn" id="6_d8ibb"]
+[ext_resource type="PackedScene" uid="uid://bmc1t0urokwig" path="res://ui.tscn" id="7_urhwn"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_j0umr")
@@ -13,5 +17,22 @@ offset_bottom = 720.0
 color = Color(0.658824, 0.788235, 0.541176, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_ito3y")]
+position = Vector2(594, 357)
 
 [node name="MobFiniteStateMachine" parent="." instance=ExtResource("3_5o634")]
+position = Vector2(180, 112)
+
+[node name="Brain" parent="." instance=ExtResource("4_2py3y")]
+position = Vector2(780, 181)
+
+[node name="Drone" parent="." instance=ExtResource("5_2wexj")]
+position = Vector2(780, 344)
+
+[node name="Saw" parent="." instance=ExtResource("6_d8ibb")]
+position = Vector2(780, 517)
+
+[node name="UI" parent="." instance=ExtResource("7_urhwn")]
+offset_left = 547.0
+offset_top = 31.0
+offset_right = 547.0
+offset_bottom = 31.0
